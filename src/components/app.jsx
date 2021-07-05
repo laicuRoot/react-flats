@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import flats from '../../data/flats';
+import Flat from './flat';
+import FlatList from './flatList';
 
 class App extends Component {
   constructor(props) {
@@ -10,9 +12,10 @@ class App extends Component {
     };
   }
   render() {
+    {console.log(this.state.flats)}
     return (
       <div>
-        Hello
+        <FlatList flats={this.state.flats} />
       </div>
     );
   }
