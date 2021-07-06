@@ -14,11 +14,12 @@ class App extends Component {
   }
 
   selectFlat = (index) => {
-    this.setState({ selectedFlat: flats[index] });
+    this.setState({
+      selectedFlat: flats[index]
+    });
   }
 
   render() {
-    {console.log(this.state.selectedFlat)}
     return (
       <div>
         <FlatList flats={this.state.flats} selectFlat={this.selectFlat} />
