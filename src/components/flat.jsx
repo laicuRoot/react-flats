@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 // {
 //     name: "Charm at the Steps of the Sacre Coeur/Montmartre",
@@ -9,12 +9,17 @@ import React, { Component } from 'react';
 //     lng: 2.34689
 //   }
 
-const Flat = ({ flat }) => {
+const Flat = ({ flat, selectFlat, index, selected }) => {
   const cardStyle = {
     backgroundImage: `url(${flat.imageUrl})`,
   };
+
+  const handleClick = () => {
+    selectFlat(index);
+  };
+
   return (
-    <div className="card" style={cardStyle}>
+    <div onClick={handleClick} className={`card${selected ? ' active' : ''}`} style={cardStyle}>
       <div className="card-category">
         {flat.price}
         {flat.priceCurrency}
