@@ -9,11 +9,11 @@ import Flat from './flat';
 //     lng: 2.34689
 //   }
 
-const FlatList = ({ flats, selectFlat }) => {
+const FlatList = ({ flats, selectFlat, selectedFlat }) => {
   return (
     <div className='flat-list'>
       {flats.map((flat, index) => {
-        return <Flat key={flat.name} flat={flat} selectFlat={selectFlat} index={index} />;
+        return <Flat key={flat.name} flat={flat} selectFlat={selectFlat} index={index} selected={flat.name === selectedFlat.name} />;
       })}
     </div>
   );

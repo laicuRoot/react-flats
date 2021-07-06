@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <FlatList flats={this.state.flats} selectFlat={this.selectFlat} />
+        <FlatList flats={this.state.flats} selectFlat={this.selectFlat} selectedFlat={this.state.selectedFlat}/>
         <Map coor={this.state.selectedFlat} />
       </div>
     );

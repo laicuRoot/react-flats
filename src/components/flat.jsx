@@ -9,7 +9,7 @@ import React, {useState} from 'react';
 //     lng: 2.34689
 //   }
 
-function Flat({ flat, selectFlat, index }) {
+function Flat({ flat, selectFlat, index, selected }) {
 
   const cardStyle = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(${flat.imageUrl})`,
@@ -22,7 +22,7 @@ function Flat({ flat, selectFlat, index }) {
 
 
   return (
-    <div onClick={handleClick} className='card' style={cardStyle}>
+    <div onClick={handleClick} className={`card${selected ? ' active' : ''}`} style={cardStyle}>
       <div className="card-category">
         {flat.price}
         {flat.priceCurrency}
